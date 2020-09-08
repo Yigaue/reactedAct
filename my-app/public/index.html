@@ -45,11 +45,14 @@
 
     <script type="text/babel">
       class App extends React.Component {
+
+        // state - dynamic data
         state = {
           name: 'Musa',
           age: 17
         }
 
+        // JSX - what to render to the template
         render() {
           return (
             <div>
@@ -58,6 +61,7 @@
           )
         }
       }
+      // React DOM - component to render and where to render it
       ReactDOM.render(<App/>, document.getElementById('root'))
     </script>
   </body>
