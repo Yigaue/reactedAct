@@ -45,18 +45,20 @@
 
     <script type="text/babel">
       class App extends React.Component {
+        state = {
+          name: 'Musa',
+          age: 17
+        }
+
         render() {
-          return(
-            <div className = "app-component">
-              <h1> My name is Lekia </h1>
-              <p>{Math.random() * 10}</p>
-              </div>
+          return (
+            <div>
+              <p>Welcome on board {this.state.name} </p>
+            </div>
           )
         }
       }
-      
-      ReactDOM.render(<App/>, document.getElementById('root'));
-
+      ReactDOM.render(<App/>, document.getElementById('root'))
     </script>
   </body>
 </html>
