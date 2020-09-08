@@ -44,25 +44,27 @@
     -->
 
     <script type="text/babel">
-      class App extends React.Component {
-
+    // class base component
+      class Speak extends React.Component {
+        
         // state - dynamic data
-        state = {
-          name: 'Musa',
-          age: 17
+        State = {
+          name: 'Peter',
+          age: 18,
+          color: 'black'
         }
 
         // JSX - what to render to the template
         render() {
           return (
             <div>
-              <p>Welcome on board {this.state.name} </p>
+            <p> A reacted Act for {this.State.name}, age {this.State.age} with a {this.State.color} skin #BlackLivesMatter</p>
             </div>
           )
         }
-      }
+      }  
       // React DOM - component to render and where to render it
-      ReactDOM.render(<App/>, document.getElementById('root'))
+     ReactDOM.render(<Speak/>, document.getElementById('root')) ;
     </script>
   </body>
 </html>
