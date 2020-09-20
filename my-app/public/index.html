@@ -49,13 +49,18 @@
       name: 'Chadwick Bossman',
       age: 47
     }
-    handleClick(e) {
-      console.log(e.target);
+  
+    handleClick = (e) => {
+      // console.log(e.target);
+      this.setState({
+        name: 'King Wakanda',
+        age: 49
+      })
     }
-    mouseOver(e) {
+    mouseOver = (e) => {
       console.log(e)
     }
-    handleCopy(e) {
+    handleCopy = (e)  => {
       console.log('Remembering Bossman')
     }
     render() {
