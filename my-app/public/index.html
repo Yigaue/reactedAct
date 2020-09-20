@@ -44,27 +44,33 @@
     -->
 
     <script type="text/babel">
-    // class base component
-      class Speak extends React.Component {
-        
-        // state - dynamic data
-        State = {
-          name: 'Peter',
-          age: 18,
-          color: 'black'
-        }
-
-        // JSX - what to render to the template
-        render() {
-          return (
-            <div className = "app-content">
-            <p> A reacted Act for {this.State.name}, age {this.State.age} with a {this.State.color} skin #BlackLivesMatter</p>
-            </div>
-          )
-        }
-      }  
-      // React DOM - component to render and where to render it
-     ReactDOM.render(<Speak/>, document.getElementById('root')) ;
+   class App extends React.Component{
+    state = {
+      name: 'Chadwick Bossman',
+      age: 47
+    }
+    handleClick(e) {
+      console.log(e.target);
+    }
+    mouseOver(e) {
+      console.log(e)
+    }
+    handleCopy(e) {
+      console.log('Remembering Bossman')
+    }
+    render() {
+      return (
+        <div className = "app-content">
+          <h1>Movie Star</h1>
+          <p>My name is {this.state.name} and I am {this.state.age}</p>
+          <button onClick={this.handleClick}>Click Me</button>
+          <button onMouseOver ={this.mouseOver}> Hover Me</button>
+          <p onCopy = {this.handleCopy}>The wakander kingdom will keep you in Remembrance</p>
+        </div>
+      )
+    }
+   }
+   ReactDOM.render(<App/>, document.getElementById('root'));
     </script>
   </body>
 </html>
