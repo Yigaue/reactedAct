@@ -44,38 +44,34 @@
     -->
 
     <script type="text/babel">
-   class App extends React.Component{
-    state = {
-      name: 'Chadwick Bossman',
-      age: 47
-    }
-  
-    handleClick = (e) => {
-      // console.log(e.target);
-      this.setState({
-        name: 'King Wakanda',
-        age: 49
-      })
-    }
-    mouseOver = (e) => {
-      console.log(e)
-    }
-    handleCopy = (e)  => {
-      console.log('Remembering Bossman')
-    }
-    render() {
-      return (
-        <div className = "app-content">
-          <h1>Movie Star</h1>
-          <p>My name is {this.state.name} and I am {this.state.age}</p>
-          <button onClick={this.handleClick}>Click Me</button>
-          <button onMouseOver ={this.mouseOver}> Hover Me</button>
-          <p onCopy = {this.handleCopy}>The wakander kingdom will keep you in Remembrance</p>
-        </div>
-      )
-    }
-   }
-   ReactDOM.render(<App/>, document.getElementById('root'));
+      class App extends React.Component {
+        state = {
+          name: 'BossMan',
+          age: 47
+        }
+        updateDetail = (e) => {
+          this.setState({
+            name: e.target.value
+          })
+        }
+        handleSubmit = (e) => {
+          e.preventDefault();
+          console.log('form Submitted', this.state.name);
+        }
+        render() {
+          return (
+            <div className = "app-component">
+            <h1>My name is {this.state.name} and I'm {this.state.age}</h1>
+            <form onSubmit={this.handleSubmit}>
+            <input type="text" onChange = {this.updateDetail} />
+              <button>Submit</button>
+            </form>
+            </div>
+            )
+        }
+      }
+
+    ReactDOM.render(<App/> , document.getElementById('root'));
     </script>
   </body>
 </html>
