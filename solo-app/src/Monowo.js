@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 
 class Monowo extends Component {
     render() {
-    console.log(this.props);
+   const {name, age, colour} = this.props;
         return (
             <div className="monowo">
-                <div>Name: {this.props.name}</div>
-                <div>Age: {this.props.age}</div>
-                <div>Colour: {this.props.colour}</div>
+                <div>Name: name</div>
+                <div>Age: {age}</div>
+                <div>Colour: {colour}</div>
             </div>
         )
     }
