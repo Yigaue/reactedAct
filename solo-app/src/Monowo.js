@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class Monowo extends Component {
-render() {
-   const {students} = this.props;
+const Monowo = ({students}) => {
+
    const studentList = students.map(student => {
     return (   
         <div className ="monowo" key = {student.id}>
@@ -15,7 +14,6 @@ render() {
     return (
         <div className="student-list">{studentList}</div>
     )
-    }
 }
 
 export default Monowo;
