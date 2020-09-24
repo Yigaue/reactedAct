@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Monowo from './Monowo';
+import AddStudents from './AddStudents';
 
 class App extends Component {
   state = {
@@ -15,6 +16,7 @@ class App extends Component {
       <div className="App">
         <h1>Hello</h1>
         <Monowo students ={this.state.students} />
+        <AddStudents/>
       </div>
     );
   }
