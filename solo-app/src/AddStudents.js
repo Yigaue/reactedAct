@@ -14,7 +14,8 @@ class AddStudents extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        // console.log(this.state);
+        this.props.addStudent(this.state);
     }
     render() {
         return (

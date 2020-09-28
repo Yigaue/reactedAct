@@ -11,12 +11,15 @@ class App extends Component {
       {id: 3, name: 'Samuel', age: 19, height: '5.1 ft'}
     ]
   }
+  addStudent = (student) => {
+    this.state.students.push(student);
+  }
     render() {
     return (
       <div className="App">
         <h1>Hello</h1>
         <Monowo students ={this.state.students} />
-        <AddStudents/>
+        <AddStudents addStudent={this.addStudent}/>
       </div>
     );
   }
