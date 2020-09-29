@@ -16,11 +16,20 @@ class App extends Component {
     let students = [...this.state.students, student];
     this.setState({students: students})
   }
+  deleteStudent = (id) => {
+    let students = this.state.students.filter( student => {
+      return student.id !== id;
+    });
+
+    this.setState({
+      students: students
+    })
+  }
     render() {
     return (
       <div className="App">
         <h1>Hello</h1>
-        <Monowo students ={this.state.students} />
+        <Monowo students ={this.state.students} deleteStudent = {this.deleteStudent} />
         <AddStudents addStudent={this.addStudent}/>
       </div>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Monowo = ({students}) => {
+const Monowo = ({students, deleteStudent}) => {
 
 //    const studentList = students.map(student => {
 //     if(student.age > 23) {
@@ -38,6 +38,7 @@ const Monowo = ({students}) => {
                     <div>Name: {student.name}</div>
                     <div>Age: {student.age}</div>
                     <div>Colour: {student.height}</div>
+                    <button onClick={ () => {deleteStudent(student.id)}}>Delete</button>
                 </div>
                 ) : null
             })
