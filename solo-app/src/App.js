@@ -12,7 +12,9 @@ class App extends Component {
     ]
   }
   addStudent = (student) => {
-    this.state.students.push(student);
+    student.id  = Math.random() *10;
+    let students = [...this.state.students, student];
+    this.setState({students: students})
   }
     render() {
     return (
