@@ -17,6 +17,13 @@ class AddStudents extends Component {
         // console.log(this.state);
         this.props.addStudent(this.state);
     }
+    componentDidMount() {
+        console.log('component did mount');
+    }
+
+    componentDidUpdate() {
+        console.log('component did update');
+    }
     render() {
         return (
             <div className="student-details">
