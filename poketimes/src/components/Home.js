@@ -4,7 +4,7 @@ const Home = () => {
     return (
         <div className="container">
             <h4 className="center">Home</h4>
-            <p>Almost every website (web application) you use is comprised of many different JS files (typically with the .js file extension). It's tempting to think of the whole thing (the application) as one program. But JS sees it differently.
+            <p className="justify">Almost every website (web application) you use is comprised of many different JS files (typically with the .js file extension). It's tempting to think of the whole thing (the application) as one program. But JS sees it differently.
 
             In JS, each standalone file is its own separate program.
 
