@@ -1,23 +1,37 @@
 import React, { Component } from 'react'
+import axios from 'axios';
 
 class Home extends Component {
+  state = {
+    posts: []
+  }
     componentDidMount() {
-        axios.get('https://jsonplaceholder.typicode.com')
+        axios.get('https://jsonplaceholder.typicode.com/posts')
         .then(res => {
-          console.log(res);
+          console.log(res.data);
+          this.setState({
+            posts: res.data.slice(0,10)
+          });
         })
     }
   render() {
+    const {posts} = this.state;
+    const postList = posts.length ? (posts.map(post=> {
+      return (
+        <div className="post card" key={post.id}>
+          <div className="card-content">
+            <span className="card-title">{post.title}</span>
+            <p> {post.body}</p>
+          </div>
+        </div>
+      )
+    })) : (
+      <div className="center">No Post yet</div>
+    )
     return (
         <div className="container">
             <h4 className="center">Home</h4>
-            <p className="justify">Almost every website (web application) you use is comprised of many different JS files (typically with the .js file extension). It's tempting to think of the whole thing (the application) as one program. But JS sees it differently.
-
-            In JS, each standalone file is its own separate program.
-
-            The reason this matters is primarily around error handling. Since JS treats files as programs, one file may fail (during parse/compile or execution) and that will not necessarily prevent the next file from being processed. Obviously, if your application depends on five .js files, and one of them fails, the overall application will probably only partially operate, at best. It's important to ensure that each file works properly, and that to whatever extent possible, they handle failure in other files as gracefully as possible.
-
-            It may surprise you to consider separate .js files as separate JS programs. From the perspective of your usage of an application, it sure seems like one big program. That's because the execution of the application allows these individual programs to cooperate and act as one program.</p>
+            {postList}
         </div>
     )
   }  
