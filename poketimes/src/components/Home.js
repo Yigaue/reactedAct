@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Home = () => {
+class Home extends Component {
+    componentDidMount() {
+        axios.get('https://jsonplaceholder.typicode.com')
+        .then(res => {
+          console.log(res);
+        })
+    }
+  render() {
     return (
         <div className="container">
             <h4 className="center">Home</h4>
@@ -13,6 +20,7 @@ const Home = () => {
             It may surprise you to consider separate .js files as separate JS programs. From the perspective of your usage of an application, it sure seems like one big program. That's because the execution of the application allows these individual programs to cooperate and act as one program.</p>
         </div>
     )
+  }  
 }
 
 export default Home;
